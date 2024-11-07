@@ -17,9 +17,9 @@ namespace InventaireGrossiste
     /// <summary>
     /// Logique d'interaction pour InscriptionsWindows.xaml
     /// </summary>
-    public partial class InscriptionsWindows : Window
+    public partial class InscriptionsWindows : Page
     {
-        public InscriptionsWindow()
+        public InscriptionsWindows()
         {
             InitializeComponent();
         }
@@ -37,8 +37,10 @@ namespace InventaireGrossiste
                 if (DatabaseHelper.AddUser(email, password))
                 {
                     MessageBox.Show("Inscription réussie !", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
-                    // Fermer la fenêtre d'inscription
-                    this.Close();
+                    if (this.NavigationService != null && this.NavigationService.CanGoBack)
+                    {
+                        this.NavigationService.GoBack();
+                    }
                 }
                 else
                 {

@@ -38,4 +38,5 @@ C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\ne
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InventaireGrossiste.sourcelink.json
-C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InscriptionWindow.g.cs
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InscriptionsWindows.g.cs
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InscriptionsWindows.baml

@@ -1,5 +1,7 @@
 ﻿using System.Data.SQLite;
 using System.IO;
+using System.Text;
+using System.Security.Cryptography;
 
 public static class DatabaseHelper
 {
@@ -97,7 +99,7 @@ public static class DatabaseHelper
             {
                 // Ajouter les paramètres pour éviter les injections SQL
                 command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Password", HashPassword(password));
 
                 // Exécuter la commande et obtenir le résultat
                 int count = Convert.ToInt32(command.ExecuteScalar());
@@ -115,7 +117,7 @@ public static class DatabaseHelper
             using (var command = new SQLiteCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Password", HashPassword(password));
 
                 // Exécuter la commande et vérifier si une ligne a été ajoutée
                 return command.ExecuteNonQuery() > 0;
@@ -123,4 +125,19 @@ public static class DatabaseHelper
         }
 
     }
+
+    private static string HashPassword(string password)
+    {
+        using (SHA256 sha256 = SHA256.Create())
+        {
+            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                builder.Append(bytes[i].ToString("x2"));
+            }
+            return builder.ToString();
+        }
+    }
+
 }

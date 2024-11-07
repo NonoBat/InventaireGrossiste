@@ -47,8 +47,8 @@ namespace InventaireGrossiste
         private void Inscrire_MouseDown(object sender, MouseButtonEventArgs e)
         {
             // Ouvrir la fenêtre d'inscription
-            InscriptionWindow inscriptionWindow = new InscriptionWindow();
-            inscriptionWindow.Show();
+            InscriptionsWindows inscriptionsPage = new InscriptionsWindows();
+            MainFrame.Navigate(inscriptionsPage);
         }
     }
 }
