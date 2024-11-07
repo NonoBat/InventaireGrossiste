@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventaireGrossiste")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ee69239d64f71895ef48fe5ee153bf9d6415ee6")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventaireGrossiste")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventaireGrossiste")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

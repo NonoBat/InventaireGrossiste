@@ -83,6 +83,44 @@ public static class DatabaseHelper
                 };
             }
         }
+
+
     }
 
+    public static bool ValidateUser(string email, string password)
+    {
+        using (var connection = new SQLiteConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT COUNT(*) FROM Users WHERE email = @Email AND password = @Password";
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                // Ajouter les paramètres pour éviter les injections SQL
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@Password", password);
+
+                // Exécuter la commande et obtenir le résultat
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                return count > 0; // Retourne true si l'utilisateur existe
+            }
+        }
+    }
+
+    public static bool AddUser(string email, string password)
+    {
+        using (var connection = new SQLiteConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO Users (email, password) VALUES (@Email, @Password)";
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@Password", password);
+
+                // Exécuter la commande et vérifier si une ligne a été ajoutée
+                return command.ExecuteNonQuery() > 0;
+            }
+        }
+
+    }
 }

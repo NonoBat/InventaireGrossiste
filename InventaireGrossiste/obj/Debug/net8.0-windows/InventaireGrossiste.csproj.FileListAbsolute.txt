@@ -34,3 +34,8 @@ C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\ne
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InventaireGrossiste.pdb
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InventaireGrossiste.genruntimeconfig.cache
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\ref\InventaireGrossiste.dll
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\MaterialDesignColors.dll
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InventaireGrossiste.sourcelink.json
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InscriptionWindow.g.cs
