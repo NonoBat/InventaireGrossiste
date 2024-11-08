@@ -2,6 +2,10 @@
 using System.IO;
 using System.Text;
 using System.Security.Cryptography;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using InventaireGrossiste;
+using InventaireGrossiste.Models;
 
 public static class DatabaseHelper
 {
@@ -89,41 +93,23 @@ public static class DatabaseHelper
 
     }
 
-    public static bool ValidateUser(string email, string password)
+    public static bool AddUser(string email, string password)
     {
-        using (var connection = new SQLiteConnection(connectionString))
+        using (var context = new ApplicationDbContext())
         {
-            connection.Open();
-            string query = "SELECT COUNT(*) FROM Users WHERE email = @Email AND password = @Password";
-            using (var command = new SQLiteCommand(query, connection))
-            {
-                // Ajouter les paramètres pour éviter les injections SQL
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Password", HashPassword(password));
-
-                // Exécuter la commande et obtenir le résultat
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                return count > 0; // Retourne true si l'utilisateur existe
-            }
+            var user = new User { Email = email, Password = HashPassword(password) };
+            context.Users.Add(user);
+            return context.SaveChanges() > 0;
         }
     }
 
-    public static bool AddUser(string email, string password)
+    public static bool ValidateUser(string email, string password)
     {
-        using (var connection = new SQLiteConnection(connectionString))
+        using (var context = new ApplicationDbContext())
         {
-            connection.Open();
-            string query = "INSERT INTO Users (email, password) VALUES (@Email, @Password)";
-            using (var command = new SQLiteCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Password", HashPassword(password));
-
-                // Exécuter la commande et vérifier si une ligne a été ajoutée
-                return command.ExecuteNonQuery() > 0;
-            }
+            string hashedPassword = HashPassword(password);
+            return context.Users.Any(u => u.Email == email && u.Password == hashedPassword);
         }
-
     }
 
     private static string HashPassword(string password)
@@ -139,5 +125,56 @@ public static class DatabaseHelper
             return builder.ToString();
         }
     }
+
+    //public static bool ValidateUser(string email, string password)
+    //{
+    //    using (var connection = new SQLiteConnection(connectionString))
+    //    {
+    //        connection.Open();
+    //        string query = "SELECT COUNT(*) FROM Users WHERE email = @Email AND password = @Password";
+    //        using (var command = new SQLiteCommand(query, connection))
+    //        {
+    //            // Ajouter les paramètres pour éviter les injections SQL
+    //            command.Parameters.AddWithValue("@Email", email);
+    //            command.Parameters.AddWithValue("@Password", HashPassword(password));
+
+    //            // Exécuter la commande et obtenir le résultat
+    //            int count = Convert.ToInt32(command.ExecuteScalar());
+    //            return count > 0; // Retourne true si l'utilisateur existe
+    //        }
+    //    }
+    //}
+
+    //public static bool AddUser(string email, string password)
+    //{
+    //    using (var connection = new SQLiteConnection(connectionString))
+    //    {
+    //        connection.Open();
+    //        string query = "INSERT INTO Users (email, password) VALUES (@Email, @Password)";
+    //        using (var command = new SQLiteCommand(query, connection))
+    //        {
+    //            command.Parameters.AddWithValue("@Email", email);
+    //            command.Parameters.AddWithValue("@Password", HashPassword(password));
+
+    //            // Exécuter la commande et vérifier si une ligne a été ajoutée
+    //            return command.ExecuteNonQuery() > 0;
+    //        }
+    //    }
+
+    //}
+
+    //private static string HashPassword(string password)
+    //{
+    //    using (SHA256 sha256 = SHA256.Create())
+    //    {
+    //        byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+    //        StringBuilder builder = new StringBuilder();
+    //        for (int i = 0; i < bytes.Length; i++)
+    //        {
+    //            builder.Append(bytes[i].ToString("x2"));
+    //        }
+    //        return builder.ToString();
+    //    }
+    //}
 
 }

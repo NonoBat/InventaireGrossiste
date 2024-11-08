@@ -12,6 +12,7 @@ using System.Data.SQLite;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 
 namespace InventaireGrossiste
 {
@@ -24,7 +25,10 @@ namespace InventaireGrossiste
         {
 
             InitializeComponent();
-            DatabaseHelper.InitializeDatabase();
+            using (var context = new ApplicationDbContext())
+            {
+                context.Database.EnsureCreated();
+            }
         }
 
         private void Valider_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,11 @@ namespace InventaireGrossiste
             {
                 MessageBox.Show("Connexion réussie !", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
                 // Redirigez ou effectuez d'autres actions après la connexion réussie
+                Accueil accueilWindow = new Accueil();
+                accueilWindow.Show();
+
+                // Fermer la fenêtre actuelle
+                this.Close();
             }
             else
             {

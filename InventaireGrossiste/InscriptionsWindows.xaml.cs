@@ -52,6 +52,10 @@ namespace InventaireGrossiste
                 MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+        private void retour_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MainWindow();
+        }
     }
 }
 

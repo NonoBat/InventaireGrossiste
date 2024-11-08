@@ -18,10 +18,11 @@
         </LinearGradientBrush>
     </Window.Background>
 
+
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Margin="0,15">
             <Label Content="OptiFlux" FontWeight="Bold" Foreground="White" FontSize="20" HorizontalContentAlignment="Center"/>
-
+            
             <Image HorizontalAlignment="Center" Height="110" Margin="0,83,0,0" Width="116"
             Source="C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\image/icone.jpg"/>
 
