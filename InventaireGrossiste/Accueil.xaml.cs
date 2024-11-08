@@ -23,5 +23,10 @@ namespace InventaireGrossiste
         {
             InitializeComponent();
         }
+
+        private void BtnClients_Clicks(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Clients());
+        }
     }
 }

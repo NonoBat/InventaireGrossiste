@@ -30,11 +30,8 @@ public static class DatabaseHelper
                 string createClient =
                     @"CREATE TABLE IF NOT EXISTS Clients (
                         id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                        nom TEXT, 
-                        prenom TEXT, 
+                        nom TEXT,  
                         adresse TEXT, 
-                        telephone TEXT,
-                        email TEXT,
                         siret TEXT
                         );";
 

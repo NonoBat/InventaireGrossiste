@@ -88,3 +88,9 @@ C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\ne
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\Clients.baml
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\Commandes.baml
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\Produits.baml
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\EditClients\AjoutManuClients.g.cs
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\EditClients\AjoutManuClients.baml
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\EditClients\ModifManuClients.g.cs
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\EditClients\ModifManuClients.baml
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\EditClients\EraseManuClients.g.cs
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\EditClients\EraseManuClients.baml

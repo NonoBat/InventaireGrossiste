@@ -19,6 +19,15 @@
     <Compile Update="Commandes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="EditClients\AjoutManuClients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditClients\EraseManuClients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditClients\ModifManuClients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="InscriptionsWindows.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +46,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Commandes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditClients\AjoutManuClients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditClients\EraseManuClients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditClients\ModifManuClients.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="InscriptionsWindows.xaml">

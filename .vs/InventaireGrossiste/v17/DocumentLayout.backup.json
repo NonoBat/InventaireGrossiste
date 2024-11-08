@@ -3,48 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\inscriptionswindows.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\inscriptionswindows.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\editclients\\erasemanuclients.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\editclients\\erasemanuclients.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\inscriptionswindows.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\inscriptionswindows.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\clients.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\clients.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\editclients\\erasemanuclients.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\editclients\\erasemanuclients.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\clients.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\clients.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\accueil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\accueil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\clients.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\clients.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\produits.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\produits.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\categories.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\categories.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\commandes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\commandes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\accueil.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\accueil.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|c:\\users\\nolan\\source\\repos\\inventairegrossiste\\inventairegrossiste\\editclients\\ajoutmanuclients.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A8638D-2A60-4E3A-B291-AB992F47F092}|InventaireGrossiste\\InventaireGrossiste.csproj|solutionrelative:inventairegrossiste\\editclients\\ajoutmanuclients.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -53,8 +29,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 185,
-          "SelectedChildIndex": 8,
+          "DockedHeight": 163,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,15 +42,37 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:696947906:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:657627375:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:802221826:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Clients.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Clients.xaml.cs",
+              "RelativeDocumentMoniker": "InventaireGrossiste\\Clients.xaml.cs",
+              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Clients.xaml.cs",
+              "RelativeToolTip": "InventaireGrossiste\\Clients.xaml.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAwwJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T13:26:50.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AjoutManuClients.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\EditClients\\AjoutManuClients.xaml.cs",
+              "RelativeDocumentMoniker": "InventaireGrossiste\\EditClients\\AjoutManuClients.xaml.cs",
+              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\EditClients\\AjoutManuClients.xaml.cs",
+              "RelativeToolTip": "InventaireGrossiste\\EditClients\\AjoutManuClients.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T14:48:30.54Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -90,128 +88,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\MainWindow.xaml",
-              "RelativeToolTip": "InventaireGrossiste\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-07T10:29:32.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\MainWindow.xaml.cs",
-              "RelativeToolTip": "InventaireGrossiste\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDkAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T10:29:31.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "InscriptionsWindows.xaml",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\InscriptionsWindows.xaml",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\InscriptionsWindows.xaml",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\InscriptionsWindows.xaml",
-              "RelativeToolTip": "InventaireGrossiste\\InscriptionsWindows.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-08T10:30:27.695Z",
+              "Title": "EraseManuClients.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\EditClients\\EraseManuClients.xaml.cs",
+              "RelativeDocumentMoniker": "InventaireGrossiste\\EditClients\\EraseManuClients.xaml.cs",
+              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\EditClients\\EraseManuClients.xaml.cs",
+              "RelativeToolTip": "InventaireGrossiste\\EditClients\\EraseManuClients.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T15:48:01.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InscriptionsWindows.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\InscriptionsWindows.xaml.cs",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\InscriptionsWindows.xaml.cs",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\InscriptionsWindows.xaml.cs",
-              "RelativeToolTip": "InventaireGrossiste\\InscriptionsWindows.xaml.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwC8AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T10:35:16.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Accueil.xaml",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Accueil.xaml",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\Accueil.xaml",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Accueil.xaml",
-              "RelativeToolTip": "InventaireGrossiste\\Accueil.xaml",
+              "Title": "EraseManuClients.xaml",
+              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\EditClients\\EraseManuClients.xaml",
+              "RelativeDocumentMoniker": "InventaireGrossiste\\EditClients\\EraseManuClients.xaml",
+              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\EditClients\\EraseManuClients.xaml",
+              "RelativeToolTip": "InventaireGrossiste\\EditClients\\EraseManuClients.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-08T10:43:42.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Produits.xaml",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Produits.xaml",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\Produits.xaml",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Produits.xaml",
-              "RelativeToolTip": "InventaireGrossiste\\Produits.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-08T11:18:04.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Categories.xaml",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Categories.xaml",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\Categories.xaml",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Categories.xaml",
-              "RelativeToolTip": "InventaireGrossiste\\Categories.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-08T11:18:26.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Commandes.xaml",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Commandes.xaml",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\Commandes.xaml",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Commandes.xaml",
-              "RelativeToolTip": "InventaireGrossiste\\Commandes.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-08T11:18:43.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Accueil.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Accueil.xaml.cs",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\Accueil.xaml.cs",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Accueil.xaml.cs",
-              "RelativeToolTip": "InventaireGrossiste\\Accueil.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T09:40:43.016Z",
+              "WhenOpened": "2024-11-08T15:46:04.577Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 46,
-          "SelectedChildIndex": 4,
+          "DockedHeight": 68,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
@@ -220,19 +132,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Clients.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Clients.xaml.cs",
-              "RelativeDocumentMoniker": "InventaireGrossiste\\Clients.xaml.cs",
-              "ToolTip": "C:\\Users\\nolan\\source\\repos\\InventaireGrossiste\\InventaireGrossiste\\Clients.xaml.cs",
-              "RelativeToolTip": "InventaireGrossiste\\Clients.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T11:25:45.925Z",
-              "EditorCaption": ""
             }
           ]
         }

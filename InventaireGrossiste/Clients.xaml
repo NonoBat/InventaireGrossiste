@@ -7,7 +7,32 @@
       mc:Ignorable="d"
       Title="Clients">
 
-    <Grid>
-        
+    <Grid Height="158" Width="671">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ListView to display clients -->
+        <ListView x:Name="ClientsListView" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}" Width="150"/>
+                    <GridViewColumn Header="Adresse" DisplayMemberBinding="{Binding Adresse}" Width="250"/>
+                    <GridViewColumn Header="Siret" DisplayMemberBinding="{Binding Siret}" Width="180"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Buttons for actions -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="0,10,0,10">
+            <Button Content="Ajouter" Width="100" Margin="5" Click="AjouterClient_Click"/>
+            <Button Content="Modifier" Width="100" Margin="5" Click="ModifierClient_Click"/>
+            <Button Content="Supprimer" Width="100" Margin="5" Click="SupprimerClient_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
