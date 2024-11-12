@@ -27,9 +27,9 @@ namespace InventaireGrossiste.Models
         public int Prix { get; set; }
         public required string Nom { get; set; }
         public DateTime DatePerime { get; set; }
-        public int CategorieId { get; set; }
         public required string Emplacement { get; set; }
-        public required Category Categorie { get; set; }
+        public int IdCategory { get; set; }
+        public required Category Category { get; set; }
     }
 
     public class Commande
@@ -39,7 +39,6 @@ namespace InventaireGrossiste.Models
         public int Qte { get; set; }
         public DateTime DateComm { get; set; }
         public required string Status { get; set; }
-
         public required Client Client { get; set; }
         public required Product Product { get; set; }
     }

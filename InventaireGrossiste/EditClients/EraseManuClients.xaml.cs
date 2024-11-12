@@ -9,25 +9,29 @@ namespace InventaireGrossiste.EditClients
     public partial class EraseManuClients : Window
     {
         public bool IsConfirmed { get; private set; }
-        public Client ClientToDelete { get; }
+        private readonly Client ClientToDelete;
 
         public EraseManuClients(Client client)
         {
             InitializeComponent();
             ClientToDelete = client;
-            DataContext = client;
+            DataContext = ClientToDelete;
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
+            // Confirmer la suppression
             IsConfirmed = true;
-            Close();
+            this.DialogResult = true;
+            this.Close();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            // Annuler la suppression
             IsConfirmed = false;
-            Close();
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

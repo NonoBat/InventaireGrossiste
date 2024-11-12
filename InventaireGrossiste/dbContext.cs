@@ -37,6 +37,12 @@ namespace InventaireGrossiste
                 .HasOne(c => c.Product)
                 .WithMany()
                 .HasForeignKey(c => c.IdProduct);
+
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)
+                .WithMany()
+                .HasForeignKey(p => p.IdCategory);
         }
+
     }
 }

@@ -18,28 +18,32 @@ namespace InventaireGrossiste.EditCategories
     /// <summary>
     /// Logique d'interaction pour EraseManuCategories.xaml
     /// </summary>
-    public partial class EraseManuCategories : Window
-    {
-        public bool IsConfirmed { get; private set; }
-        public Category CategoryToDelete { get; }
-
-        public EraseManuCategories(Category category)
+        public partial class EraseManuCategories : Window
         {
-            InitializeComponent();
-            CategoryToDelete = category;
-            DataContext = category;
-        }
+            public bool IsConfirmed { get; private set; }
+            private readonly Category _categoryToDelete;
 
-        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
-        {
-            IsConfirmed = true;
-            Close();
-        }
+            public EraseManuCategories(Category category)
+            {
+                InitializeComponent();
+                _categoryToDelete = category;
+                DataContext = _categoryToDelete;
+            }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            IsConfirmed = false;
-            Close();
+            private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+            {
+                // Confirmer la suppression
+                IsConfirmed = true;
+                this.DialogResult = true;
+                this.Close();
+            }
+
+            private void CancelButton_Click(object sender, RoutedEventArgs e)
+            {
+                // Annuler la suppression
+                IsConfirmed = false;
+                this.DialogResult = false;
+                this.Close();
+            }
         }
     }
-}

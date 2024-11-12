@@ -32,8 +32,16 @@ namespace InventaireGrossiste.EditCategories
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             // Valider les modifications et fermer la fenêtre de dialogue
-            DialogResult = true;
-            Close();
+            if (CategorieModifiee != null)
+            {
+                // Vous pouvez ajouter des validations ici si nécessaire
+                DialogResult = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Erreur : La catégorie modifiée est null.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

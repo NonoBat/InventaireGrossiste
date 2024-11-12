@@ -32,7 +32,18 @@ namespace InventaireGrossiste
         private List<Product> GetProduitsFromDatabase()
         {
             // Récupérer les données de la base de données
-            return _context.Products.ToList();
+            
+            return _context.Products.Select(p => new Product 
+            {
+                Id = p.Id,
+                Qte = p.Qte,
+                Prix = p.Prix,
+                Nom = p.Nom,
+                DatePerime = p.DatePerime,
+                Category = p.Category,
+                Emplacement = p.Emplacement
+            }).ToList();
+
         }
 
         private void AjouterProduit_Click(object sender, RoutedEventArgs e)
@@ -94,7 +105,7 @@ namespace InventaireGrossiste
                 produitExistant.Qte = produit.Qte;
                 produitExistant.Prix = produit.Prix;
                 produitExistant.DatePerime = produit.DatePerime;
-                produitExistant.CategorieId = produit.CategorieId;
+                produitExistant.Category = produit.Category;
                 produitExistant.Emplacement = produit.Emplacement;
                 _context.SaveChanges();
             }

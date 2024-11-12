@@ -26,7 +26,7 @@ namespace InventaireGrossiste.EditProducts
                 Qte = int.Parse(QteTextBox.Text),
                 DatePerime = DateTime.Parse(DLCTextBox.Text),
                 Emplacement = EmpTextBox.Text,
-                Categorie = new Category { Nom = CategorieTextBox.Text }
+                Category = new Category { Nom = CategorieTextBox.Text }
             };
 
             // Fermer la fenêtre de dialogue et retourner le résultat
