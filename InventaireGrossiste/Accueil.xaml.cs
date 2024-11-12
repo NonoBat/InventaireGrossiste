@@ -28,5 +28,19 @@ namespace InventaireGrossiste
         {
             MainFrame.Navigate(new Clients());
         }
+
+        private void BtnCommandes_Clicks(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Commandes());
+        }
+        private void BtnProducts_Clicks(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Produits());
+        }
+
+        private void BtnCategorie_Clicks(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Categories());
+        }
     }
 }

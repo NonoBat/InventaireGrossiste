@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\App.xaml
-101178521189
+19-1767745233
 
-181873813465
+272145678951
 2241215315788
-Accueil.xaml;Categories.xaml;Clients.xaml;Commandes.xaml;EditClients\AjoutManuClients.xaml;EditClients\EraseManuClients.xaml;EditClients\ModifManuClients.xaml;InscriptionsWindows.xaml;MainWindow.xaml;Produits.xaml;
+Accueil.xaml;Categories.xaml;Clients.xaml;Commandes.xaml;EditCategories\AjoutManuCategories.xaml;EditCategories\EraseManuCategories.xaml;EditCategories\ModifManuCategories.xaml;EditClients\AjoutManuClients.xaml;EditClients\EraseManuClients.xaml;EditClients\ModifManuClients.xaml;EditCommandes\AjoutManuCommandes.xaml;EditCommandes\EraseManuCommandes.xaml;EditCommandes\ModifManuCommandes.xaml;EditProducts\AjoutManuProducts.xaml;EditProducts\EraseManuProducts.xaml;EditProducts\ModifManuProducts.xaml;InscriptionsWindows.xaml;MainWindow.xaml;Produits.xaml;
 
-True
+False
 

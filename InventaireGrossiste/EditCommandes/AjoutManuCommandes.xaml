@@ -1,0 +1,25 @@
+﻿<Window x:Class="InventaireGrossiste.EditCommandes.AjoutManuCommandes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ajouter une Commande" Height="400" Width="400">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Client" />
+            <ComboBox x:Name="ClientComboBox" DisplayMemberPath="Nom" SelectedValuePath="Id" />
+
+            <TextBlock Text="Produit" Margin="0,10,0,0" />
+            <ComboBox x:Name="ProductComboBox" DisplayMemberPath="Nom" SelectedValuePath="Id" />
+
+            <TextBlock Text="Quantité" Margin="0,10,0,0" />
+            <TextBox x:Name="qteTextBox" />
+
+            <TextBlock Text="Date de Commande" Margin="0,10,0,0" />
+            <TextBox x:Name="DateCommTextBox" />
+
+            <TextBlock Text="Statut" Margin="0,10,0,0" />
+            <TextBox x:Name="StatusTextBox" />
+
+            <Button Content="Ajouter" Click="AjouterButton_Click" Margin="0,20,0,0" />
+        </StackPanel>
+    </Grid>
+</Window>

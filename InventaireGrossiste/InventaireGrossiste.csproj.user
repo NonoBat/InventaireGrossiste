@@ -19,6 +19,15 @@
     <Compile Update="Commandes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="EditCategories\AjoutManuCategories.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditCategories\EraseManuCategories.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditCategories\ModifManuCategories.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="EditClients\AjoutManuClients.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +35,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="EditClients\ModifManuClients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditCommandes\AjoutManuCommandes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditCommandes\EraseManuCommandes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditCommandes\ModifManuCommandes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditProducts\AjoutManuProducts.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditProducts\EraseManuProducts.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditProducts\ModifManuProducts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="InscriptionsWindows.xaml.cs">
@@ -48,6 +75,15 @@
     <Page Update="Commandes.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="EditCategories\AjoutManuCategories.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditCategories\EraseManuCategories.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditCategories\ModifManuCategories.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="EditClients\AjoutManuClients.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -55,6 +91,24 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditClients\ModifManuClients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditCommandes\AjoutManuCommandes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditCommandes\EraseManuCommandes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditCommandes\ModifManuCommandes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditProducts\AjoutManuProducts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditProducts\EraseManuProducts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditProducts\ModifManuProducts.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="InscriptionsWindows.xaml">
