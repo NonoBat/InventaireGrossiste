@@ -100,7 +100,7 @@ namespace InventaireGrossiste.EditProducts {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;V1.0.0.0;component/editproducts/ajoutmanuproducts.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;component/editproducts/ajoutmanuproducts.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\EditProducts\AjoutManuProducts.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
