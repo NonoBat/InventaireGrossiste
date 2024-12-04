@@ -19,8 +19,10 @@ namespace InventaireGrossiste
     /// </summary>
     public partial class InscriptionsWindows : Page
     {
-        public InscriptionsWindows()
+        private ApplicationDbContext _context;
+        public InscriptionsWindows(ApplicationDbContext _context)
         {
+            ApplicationDbContext context = _context;
             InitializeComponent();
         }
 

@@ -21,11 +21,11 @@
         <ListView x:Name="CommandesListView" Margin="10,10,127,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="N°client" DisplayMemberBinding="{Binding id_client}" Width="50"/>
-                    <GridViewColumn Header="N°produit" DisplayMemberBinding="{Binding id_product}" Width="150"/>
-                    <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding qte}" Width="50"/>
-                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding dateComm}" Width="180"/>
-                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding status}" Width="160"/>
+                    <GridViewColumn Header="N°client" DisplayMemberBinding="{Binding Client.Nom}" Width="50"/>
+                    <GridViewColumn Header="N°produit" DisplayMemberBinding="{Binding Product.Nom}" Width="150"/>
+                    <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding Qte}" Width="50"/>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding DateComm, StringFormat={}{0:dd/MM/yyyy}}" Width="180"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="160"/>
                 </GridView>
             </ListView.View>
         </ListView>

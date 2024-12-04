@@ -29,8 +29,8 @@ namespace InventaireGrossiste.EditCommandes
             // Créer une nouvelle commande avec les informations saisies
             NouvelleCommande = new Commande
             {
-                IdClient = (int)ClientComboBox.SelectedValue,
-                IdProduct = (int)ProductComboBox.SelectedValue,
+                id_client = (int)ClientComboBox.SelectedValue,
+                id_product = (int)ProductComboBox.SelectedValue,
                 Qte = int.Parse(qteTextBox.Text),
                 DateComm = DateTime.Parse(DateCommTextBox.Text),
                 Status = StatusTextBox.Text,

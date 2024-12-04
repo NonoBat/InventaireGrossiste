@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,37 +26,57 @@ namespace InventaireGrossiste
     {
         private readonly ApplicationDbContext _context;
 
-        public Commandes()
+        public Commandes(ApplicationDbContext context)
         {
             InitializeComponent();
-            _context = new ApplicationDbContext();
+            _context = context;
             LoadCommandes();
         }
 
         private void LoadCommandes()
         {
             // Récupérer les commandes de la base de données
-            List<Commande> commandes = GetCommandesFromDatabase();
+            List<JoinCommande> commandes = GetCommandesFromDatabase();
 
             CommandesListView.ItemsSource = commandes;
         }
 
-        private List<Commande> GetCommandesFromDatabase()
+        private List<JoinCommande> GetCommandesFromDatabase()
         {
             // Récupérer les données de la base de données
-            return _context.Commandes.Select(c => new Commande
+            return _context.Commandes
+                .Include(c => c.Client)
+                .Include(c => c.Product)
+                .Select(c => new JoinCommande
             {
-                IdClient = c.IdClient,
-                IdProduct = c.IdProduct,
+                id_client = c.id_client,
+                id_product = c.id_product,
                 Qte = c.Qte,
                 DateComm = c.DateComm,
                 Status = c.Status,
-                Client = c.Client,
-                Product = c.Product
-            }).ToList();
+                    Client = new Client
+                    {
+                        Id = c.Client.Id,
+                        Nom = c.Client.Nom,
+                        Adresse = c.Client.Adresse,
+                        Siret = c.Client.Siret
+                    },
+                
+                    Product = new Product
+                    {
+                        Id = c.Product.Id,
+                        Nom = c.Product.Nom,
+                        Qte = c.Product.Qte,
+                        Prix = c.Product.Prix,
+                        DatePerime = c.Product.DatePerime,
+                        Emplacement = c.Product.Emplacement,
+                        Category = c.Product.Category
+                    }
+                }).ToList();
+
         }
 
-        private void AjouterCommande_Click(object sender, RoutedEventArgs e)
+            private void AjouterCommande_Click(object sender, RoutedEventArgs e)
         {
             // Récupérer les clients et les produits de la base de données
             var clients = _context.Clients.ToList();
@@ -86,20 +107,29 @@ namespace InventaireGrossiste
         private void ModifierCommande_Click(object sender, RoutedEventArgs e)
         {
             // Vérifier si une commande est sélectionnée
-            if (CommandesListView.SelectedItem is Commande selectedCommande)
+            if (CommandesListView.SelectedItem is JoinCommande selectedCommande)
             {
-                // Ouvrir la fenêtre de modification avec les informations de la commande sélectionnée
-                var dialog = new ModifManuCommandes(selectedCommande);
-                if (dialog.ShowDialog() == true)
+                // Récupérer la commande complète depuis la base de données
+                var commande = _context.Commandes
+                    .Include(c => c.Client)
+                    .Include(c => c.Product)
+                    .FirstOrDefault(c => c.id_client == selectedCommande.id_client && c.id_product == selectedCommande.id_product);
+
+                if (commande != null)
                 {
-                    // Récupérer les informations modifiées de la commande depuis la fenêtre de dialogue
-                    var commandeModifiee = dialog.CommandeModifiee;
+                    // Ouvrir la fenêtre de modification avec les informations de la commande sélectionnée
+                    var dialog = new ModifManuCommandes(commande, _context);
+                    if (dialog.ShowDialog() == true)
+                    {
+                        // Récupérer les informations modifiées de la commande depuis la fenêtre de dialogue
+                        var commandeModifiee = dialog.CommandeModifiee;
 
-                    // Mettre à jour les informations de la commande dans la base de données
-                    ModifierCommande(commandeModifiee);
+                        // Mettre à jour les informations de la commande dans la base de données
+                        ModifierCommande(commandeModifiee);
 
-                    // Recharger la liste des commandes
-                    LoadCommandes();
+                        // Recharger la liste des commandes
+                        LoadCommandes();
+                    }
                 }
             }
             else
@@ -108,10 +138,11 @@ namespace InventaireGrossiste
             }
         }
 
+
         private void ModifierCommande(Commande commande)
         {
             // Mettre à jour la commande dans la base de données
-            var commandeExistante = _context.Commandes.Find(commande.IdClient, commande.IdProduct);
+            var commandeExistante = _context.Commandes.Find(commande.id_client, commande.id_product);
             if (commandeExistante != null)
             {
                 commandeExistante.Qte = commande.Qte;
@@ -124,10 +155,21 @@ namespace InventaireGrossiste
         private void SupprimerCommande_Click(object sender, RoutedEventArgs e)
         {
             // Vérifier si une commande est sélectionnée
-            if (CommandesListView.SelectedItem is Commande selectedCommande)
+            if (CommandesListView.SelectedItem is JoinCommande selectedCommande)
             {
+                var commande = new Commande
+                {
+                    id_client = selectedCommande.id_client,
+                    id_product = selectedCommande.id_product,
+                    Qte = selectedCommande.Qte,
+                    DateComm = selectedCommande.DateComm,
+                    Status = selectedCommande.Status,
+                    Client = selectedCommande.Client,
+                    Product = selectedCommande.Product
+                };
+
                 // Afficher une fenêtre de confirmation pour la suppression de la commande
-                var dialog = new EraseManuCommandes(selectedCommande);
+                var dialog = new EraseManuCommandes(commande);
                 if (dialog.ShowDialog() == true && dialog.IsConfirmed)
                 {
                     // Supprimer la commande de la base de données
@@ -143,16 +185,16 @@ namespace InventaireGrossiste
             }
         }
 
-
-        private void SupprimerCommande(Commande commande)
+        private void SupprimerCommande(JoinCommande joinCommande)
         {
             // Supprimer la commande de la base de données
-            var commandeExistante = _context.Commandes.Find(commande.IdClient, commande.IdProduct);
+            var commandeExistante = _context.Commandes.Find(joinCommande.id_client, joinCommande.id_product);
             if (commandeExistante != null)
             {
                 _context.Commandes.Remove(commandeExistante);
                 _context.SaveChanges();
             }
         }
+
     }
 }

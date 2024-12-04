@@ -21,25 +21,29 @@ namespace InventaireGrossiste.EditCommandes
     public partial class EraseManuCommandes : Window
     {
         public bool IsConfirmed { get; private set; }
-        public Commande CommandeToDelete { get; }
+        private readonly Commande CommandeToDelete;
 
         public EraseManuCommandes(Commande commande)
         {
             InitializeComponent();
             CommandeToDelete = commande;
-            DataContext = commande;
+            DataContext = CommandeToDelete;
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
+            // Confirmer la suppression
             IsConfirmed = true;
-            Close();
+            this.DialogResult = true;
+            this.Close();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            // Annuler la suppression
             IsConfirmed = false;
-            Close();
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

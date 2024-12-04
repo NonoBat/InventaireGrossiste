@@ -21,14 +21,14 @@ namespace InventaireGrossiste
     /// </summary>
     public partial class MainWindow : Window
     {
+        ApplicationDbContext _context;
         public MainWindow()
         {
-
+            ApplicationDbContext context = new ApplicationDbContext();
+            _context = context;
             InitializeComponent();
-            using (var context = new ApplicationDbContext())
-            {
-                context.Database.EnsureCreated();
-            }
+            context.Database.EnsureCreated();
+            
         }
 
         private void Valider_Click(object sender, RoutedEventArgs e)
@@ -42,7 +42,7 @@ namespace InventaireGrossiste
             {
                 MessageBox.Show("Connexion réussie !", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
                 // Redirigez ou effectuez d'autres actions après la connexion réussie
-                Accueil accueilWindow = new Accueil();
+                Accueil accueilWindow = new Accueil(_context);
                 accueilWindow.Show();
 
                 // Fermer la fenêtre actuelle
@@ -56,7 +56,7 @@ namespace InventaireGrossiste
         private void Inscrire_MouseDown(object sender, MouseButtonEventArgs e)
         {
             // Ouvrir la fenêtre d'inscription
-            InscriptionsWindows inscriptionsPage = new InscriptionsWindows();
+            InscriptionsWindows inscriptionsPage = new InscriptionsWindows(_context);
             MainFrame.Navigate(inscriptionsPage);
         }
     }

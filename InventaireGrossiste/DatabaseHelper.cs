@@ -39,7 +39,7 @@ public static class DatabaseHelper
                     @"CREATE TABLE IF NOT EXISTS Products (
                         id INTEGER PRIMARY KEY AUTOINCREMENT, 
                         qte INTEGER, 
-                        prix INTEGER, 
+                        prix REAL, 
                         nom TEXT,
                         datePerime DATE,
                         categorie INTEGER,
@@ -122,4 +122,5 @@ public static class DatabaseHelper
             return builder.ToString();
         }
     }
+
 }

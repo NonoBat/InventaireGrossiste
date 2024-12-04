@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using InventaireGrossiste.Models;
 
 namespace InventaireGrossiste
 {
@@ -19,8 +20,10 @@ namespace InventaireGrossiste
     /// </summary>
     public partial class Accueil : Window
     {
-        public Accueil()
+        ApplicationDbContext _context;
+        public Accueil(ApplicationDbContext context)
         {
+            _context = context;
             InitializeComponent();
         }
 
@@ -31,11 +34,11 @@ namespace InventaireGrossiste
 
         private void BtnCommandes_Clicks(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Commandes());
+            MainFrame.Navigate(new Commandes(_context));
         }
         private void BtnProducts_Clicks(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Produits());
+            MainFrame.Navigate(new Produits(_context));
         }
 
         private void BtnCategorie_Clicks(object sender, RoutedEventArgs e)

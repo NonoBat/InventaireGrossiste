@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,41 +16,47 @@ namespace InventaireGrossiste
     {
         private readonly ApplicationDbContext _context;
 
-        public Produits()
+        public Produits(ApplicationDbContext context)
         {
             InitializeComponent();
-            _context = new ApplicationDbContext();
+            _context = context;
             LoadProduits();
         }
 
         private void LoadProduits()
         {
             // Récupérer les produits de la base de données
-            List<Product> produits = GetProduitsFromDatabase();
+            List<JoinProduct> produits = GetProduitsFromDatabase();
             ProduitsListView.ItemsSource = produits;
         }
 
-        private List<Product> GetProduitsFromDatabase()
+        private List<JoinProduct> GetProduitsFromDatabase()
         {
-            // Récupérer les données de la base de données
-            
-            return _context.Products.Select(p => new Product 
-            {
-                Id = p.Id,
-                Qte = p.Qte,
-                Prix = p.Prix,
-                Nom = p.Nom,
-                DatePerime = p.DatePerime,
-                Category = p.Category,
-                Emplacement = p.Emplacement
-            }).ToList();
-
+            // récupérer les données de la base de données
+            return _context.Products
+                .Include(p => p.Category)
+                .Select(p => new JoinProduct
+                {
+                    Id = p.Id,
+                    Qte = p.Qte,
+                    Prix = p.Prix,
+                    Nom = p.Nom,
+                    DatePerime = p.DatePerime,
+                    categorie = p.categorie,
+                    Emplacement = p.Emplacement,
+                        Category = new Category
+                        {
+                            Id = p.Category.Id,
+                            Nom = p.Category.Nom
+                        }
+                })
+                .ToList();
         }
 
         private void AjouterProduit_Click(object sender, RoutedEventArgs e)
         {
             // Afficher une fenêtre de dialogue pour saisir les informations du produit
-            var dialog = new AjoutManuProducts();
+            var dialog = new AjoutManuProducts(_context);
             if (dialog.ShowDialog() == true)
             {
                 // Récupérer les informations du produit depuis la fenêtre de dialogue
@@ -73,20 +80,26 @@ namespace InventaireGrossiste
         private void ModifierProduit_Click(object sender, RoutedEventArgs e)
         {
             // Vérifier si un produit est sélectionné
-            if (ProduitsListView.SelectedItem is Product selectedProduit)
+            if (ProduitsListView.SelectedItem is JoinProduct selectedProduit)
             {
-                // Ouvrir la fenêtre de modification avec les informations du produit sélectionné
-                var dialog = new ModifManuProducts(selectedProduit);
-                if (dialog.ShowDialog() == true)
+                // Récupérer le produit complet depuis la base de données
+                var produit = _context.Products.Include(p => p.Category).FirstOrDefault(p => p.Id == selectedProduit.Id);
+
+                if (produit != null)
                 {
-                    // Récupérer les informations modifiées du produit depuis la fenêtre de dialogue
-                    var produitModifie = dialog.ProduitModifie;
+                    // Ouvrir la fenêtre de modification avec les informations du produit sélectionné
+                    var dialog = new ModifManuProducts(produit, _context);
+                    if (dialog.ShowDialog() == true)
+                    {
+                        // Récupérer les informations modifiées du produit depuis la fenêtre de dialogue
+                        var produitModifie = dialog.ProduitModifie;
 
-                    // Mettre à jour les informations du produit dans la base de données
-                    ModifierProduit(produitModifie);
+                        // Mettre à jour les informations du produit dans la base de données
+                        ModifierProduit(produitModifie);
 
-                    // Recharger la liste des produits
-                    LoadProduits();
+                        // Recharger la liste des produits
+                        LoadProduits();
+                    }
                 }
             }
             else
@@ -94,6 +107,7 @@ namespace InventaireGrossiste
                 MessageBox.Show("Veuillez sélectionner un produit à modifier.");
             }
         }
+
 
         private void ModifierProduit(Product produit)
         {
@@ -105,7 +119,7 @@ namespace InventaireGrossiste
                 produitExistant.Qte = produit.Qte;
                 produitExistant.Prix = produit.Prix;
                 produitExistant.DatePerime = produit.DatePerime;
-                produitExistant.Category = produit.Category;
+                produitExistant.categorie = produit.categorie;
                 produitExistant.Emplacement = produit.Emplacement;
                 _context.SaveChanges();
             }
@@ -114,17 +128,23 @@ namespace InventaireGrossiste
         private void SupprimerProduit_Click(object sender, RoutedEventArgs e)
         {
             // Vérifier si un produit est sélectionné
-            if (ProduitsListView.SelectedItem is Product selectedProduit)
+            if (ProduitsListView.SelectedItem is JoinProduct selectedProduit)
             {
-                // Afficher une fenêtre de confirmation pour la suppression du produit
-                var dialog = new EraseManuProducts(selectedProduit);
-                if (dialog.ShowDialog() == true && dialog.IsConfirmed)
-                {
-                    // Supprimer le produit de la base de données
-                    SupprimerProduit(selectedProduit);
+                // Récupérer le produit complet depuis la base de données
+                var produit = _context.Products.Include(p => p.Category).FirstOrDefault(p => p.Id == selectedProduit.Id);
 
-                    // Recharger la liste des produits
-                    LoadProduits();
+                if (produit != null)
+                {
+                    // Afficher une fenêtre de confirmation pour la suppression du produit
+                    var dialog = new EraseManuProducts(produit);
+                    if (dialog.ShowDialog() == true && dialog.IsConfirmed)
+                    {
+                        // Supprimer le produit de la base de données
+                        SupprimerProduit(produit);
+
+                        // Recharger la liste des produits
+                        LoadProduits();
+                    }
                 }
             }
             else

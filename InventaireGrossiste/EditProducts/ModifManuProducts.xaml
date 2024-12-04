@@ -17,7 +17,7 @@
             <TextBox Text="{Binding datePerime}" Margin="0,0,0,10"/>
 
             <TextBlock Text="Categorie" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding categorie}" Margin="0,0,0,10"/>
+             <ComboBox x:Name="CategorieComboBox" DisplayMemberPath="Nom" SelectedValuePath="Id" SelectedValue="{Binding categorie}" Margin="10" />
 
             <TextBlock Text="Emplacement" Margin="0,0,0,5"/>
             <TextBox Text="{Binding emplacement}" Margin="0,0,0,10"/>

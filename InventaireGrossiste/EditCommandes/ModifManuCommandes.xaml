@@ -4,20 +4,14 @@
         Title="Modifier commande" Height="Auto" Width="Auto" SizeToContent="WidthAndHeight">
     <Grid>
         <StackPanel Margin="10">
-            <TextBlock Text="id_client" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding id_client}" Margin="0,0,0,10"/>
+            <TextBlock x:Name="QteTextBox" Text="Quantité" Margin="0,0,0,5"/>
+            <TextBox Text="{Binding Qte}" Margin="0,0,0,10"/>
 
-            <TextBlock Text="id_produit" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding id_product}" Margin="0,0,0,10"/>
+            <TextBlock x:Name="DateCommTextBox" Text="Date commande" Margin="0,0,0,5"/>
+            <TextBox Text="{Binding DateComm}" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Quantité" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding qte}" Margin="0,0,0,10"/>
-
-            <TextBlock Text="Date commande" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding dateComm}" Margin="0,0,0,10"/>
-
-            <TextBlock Text="Status" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding status}" Margin="0,0,0,10"/>
+            <TextBlock x:Name="StatusTextBox" Text="Status" Margin="0,0,0,5"/>
+            <TextBox Text="{Binding Status}" Margin="0,0,0,10"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Content="Enregistrer" Width="75" Margin="0,0,5,0" Click="BtnSave_Click"/>

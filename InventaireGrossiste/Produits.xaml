@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Produits">
 
-    <Grid Height="158" Width="671">
+    <Grid Height="158" Margin="10,146,26,146">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -22,12 +22,12 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
-                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding nom}" Width="150"/>
-                    <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding qte}" Width="55"/>
-                    <GridViewColumn Header="Prix" DisplayMemberBinding="{Binding prix}" Width="80"/>
-                    <GridViewColumn Header="DLC" DisplayMemberBinding="{Binding datePerime}" Width="120"/>
-                    <GridViewColumn Header="Categorie" DisplayMemberBinding="{Binding categorie}" Width="120"/>
-                    <GridViewColumn Header="Emplacement" DisplayMemberBinding="{Binding emplacement}" Width="80"/>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}" Width="150"/>
+                    <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding Qte}" Width="55"/>
+                    <GridViewColumn Header="Prix" DisplayMemberBinding="{Binding Prix}" Width="80"/>
+                    <GridViewColumn Header="DLC" DisplayMemberBinding="{Binding DatePerime, StringFormat={}{0:dd/MM/yyyy}}" Width="120"/>
+                    <GridViewColumn Header="Categorie" DisplayMemberBinding="{Binding Category.Nom}" Width="120"/>
+                    <GridViewColumn Header="Emplacement" DisplayMemberBinding="{Binding Emplacement}" Width="80"/>
                 </GridView>
             </ListView.View>
         </ListView>

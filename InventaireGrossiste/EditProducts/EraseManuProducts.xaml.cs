@@ -21,25 +21,29 @@ namespace InventaireGrossiste.EditProducts
     public partial class EraseManuProducts : Window
     {
         public bool IsConfirmed { get; private set; }
-        public Product ProductToDelete { get; }
+        private readonly Product ProductToDelete;
 
         public EraseManuProducts(Product produit)
         {
             InitializeComponent();
             ProductToDelete = produit;
-            DataContext = produit;
+            DataContext = ProductToDelete;
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
+            // Confirmer la suppression
             IsConfirmed = true;
-            Close();
+            this.DialogResult = true;
+            this.Close();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            // Annuler la suppression
             IsConfirmed = false;
-            Close();
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

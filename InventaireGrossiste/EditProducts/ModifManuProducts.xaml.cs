@@ -20,13 +20,23 @@ namespace InventaireGrossiste.EditProducts
     /// </summary>
     public partial class ModifManuProducts : Window
     {
+        private readonly ApplicationDbContext _context;
         public Product ProduitModifie { get; private set; }
 
-        public ModifManuProducts(Product produit)
+        public ModifManuProducts(Product produit, ApplicationDbContext context)
         {
             InitializeComponent();
+            _context = context;
             ProduitModifie = produit;
             DataContext = ProduitModifie;
+            LoadCategories();
+        }
+
+        private void LoadCategories()
+        {
+            // Charger les catégories depuis la base de données
+            var categories = _context.Categories.ToList();
+            CategorieComboBox.ItemsSource = categories;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)

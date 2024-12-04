@@ -26,22 +26,22 @@ namespace InventaireGrossiste
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Commande>()
-                .HasKey(c => new { c.IdClient, c.IdProduct });
+                .HasKey(c => new { c.id_client, c.id_product });
 
             modelBuilder.Entity<Commande>()
                 .HasOne(c => c.Client)
                 .WithMany()
-                .HasForeignKey(c => c.IdClient);
+                .HasForeignKey(c => c.id_client);
 
             modelBuilder.Entity<Commande>()
                 .HasOne(c => c.Product)
                 .WithMany()
-                .HasForeignKey(c => c.IdProduct);
+                .HasForeignKey(c => c.id_product);
 
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Category)
                 .WithMany()
-                .HasForeignKey(p => p.IdCategory);
+                .HasForeignKey(p => p.categorie);
         }
 
     }

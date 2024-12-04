@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using InventaireGrossiste.Models;
+using SQLitePCL;
 
 namespace InventaireGrossiste.EditCommandes
 {
@@ -20,18 +21,19 @@ namespace InventaireGrossiste.EditCommandes
     /// </summary>
     public partial class ModifManuCommandes : Window
     {
+        private readonly ApplicationDbContext _context;
         public Commande CommandeModifiee { get; private set; }
 
-        public ModifManuCommandes(Commande commande)
+        public ModifManuCommandes(Commande commande, ApplicationDbContext context)
         {
             InitializeComponent();
+            _context = context;
             CommandeModifiee = commande;
             DataContext = CommandeModifiee;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            // Valider les modifications et fermer la fenêtre de dialogue
             DialogResult = true;
             Close();
         }
