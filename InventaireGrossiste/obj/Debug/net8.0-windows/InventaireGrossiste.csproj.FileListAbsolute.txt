@@ -202,7 +202,6 @@ C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\ne
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
-C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\ressources\chart.html
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
@@ -210,3 +209,6 @@ C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\ne
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\InventaireGrossiste_Content.g.cs
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\ressources\chart.html
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\graphique.g.cs
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\graphique.baml

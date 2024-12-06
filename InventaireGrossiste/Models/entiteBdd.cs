@@ -49,6 +49,7 @@ namespace InventaireGrossiste.Models
 
     public class Commande
     {
+        public int Id { get; set; }
         [ForeignKey("Client")]
         public int id_client { get; set; }
         [ForeignKey("Product")]
@@ -62,6 +63,7 @@ namespace InventaireGrossiste.Models
 
     public class JoinCommande
     {
+        public int Id { get; set; }
         public int id_client { get; set; }
         public int id_product { get; set; }
         public int Qte { get; set; }

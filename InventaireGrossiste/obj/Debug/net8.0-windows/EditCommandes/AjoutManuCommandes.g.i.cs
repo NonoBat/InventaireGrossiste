@@ -92,7 +92,7 @@ namespace InventaireGrossiste.EditCommandes {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;component/editcommandes/ajoutmanucommandes.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;V1.0.0.0;component/editcommandes/ajoutmanucommandes.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\EditCommandes\AjoutManuCommandes.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

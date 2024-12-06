@@ -49,12 +49,13 @@ public static class DatabaseHelper
 
                 string createCommande =
                     @"CREATE TABLE IF NOT EXISTS Commandes (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT, 
                         id_client INTEGER,
                         id_product INTEGER, 
                         qte INTEGER,
                         dateComm DATE,
                         status TEXT,
-                        FOREIGN KEY(id_client) REFERENCES Clients(id)
+                        FOREIGN KEY(id_client) REFERENCES Clients(id),
                         FOREIGN KEY(id_product) REFERENCES Products(id)
                         );";
 

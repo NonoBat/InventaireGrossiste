@@ -61,7 +61,7 @@ namespace InventaireGrossiste {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;component/commandes.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;V1.0.0.0;component/commandes.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Commandes.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

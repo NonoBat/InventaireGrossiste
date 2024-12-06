@@ -55,6 +55,9 @@
     <Compile Update="EditProducts\ModifManuProducts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="graphique.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="InscriptionsWindows.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -109,6 +112,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditProducts\ModifManuProducts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="graphique.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="InscriptionsWindows.xaml">

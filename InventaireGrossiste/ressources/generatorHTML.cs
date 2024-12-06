@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace InventaireGrossiste.ressources
 {
@@ -16,90 +15,96 @@ namespace InventaireGrossiste.ressources
         {
             _context = context;
         }
-
         public void GenererFichierHTML()
         {
-            // Obtenir les données cumulées des quantités commandées par produit et par jour
-            var commandesParProduitEtJour = _context.Commandes
-                .GroupBy(c => new { c.Product.Nom, c.DateComm.Date })  // Grouper par produit et date
-                .Select(g => new
+            try
+            {
+                // Vérifier et créer le répertoire si nécessaire
+                string cheminRepertoire = Path.Combine(Directory.GetCurrentDirectory(), "ressources");
+                if (!Directory.Exists(cheminRepertoire))
                 {
-                    Produit = g.Key.Nom,
-                    Date = g.Key.Date,
-                    TotalQuantite = g.Sum(c => c.Qte)  // Somme des quantités par produit et par jour
-                })
-                .OrderBy(g => g.Date)  // Trier par date
-                .ToList();
+                    Directory.CreateDirectory(cheminRepertoire);
+                }
 
-            // Vérifiez les données générées
-            Console.WriteLine("Données des commandes par produit et par jour:");
-            foreach (var item in commandesParProduitEtJour)
-            {
-                Console.WriteLine($"Produit: {item.Produit}, Date: {item.Date}, Quantité: {item.TotalQuantite}");
+                // Générer les données
+                var commandesParJour = _context.Commandes
+                    .GroupBy(c => c.DateComm.Date)
+                    .Select(g => new
+                    {
+                        Date = g.Key,
+                        TotalCommandes = g.Count()
+                    })
+                    .OrderBy(g => g.Date)
+                    .ToList();
+
+                if (!commandesParJour.Any())
+                {
+                    throw new Exception("Aucune donnée disponible pour le graphique.");
+                }
+
+                StringBuilder dataBuilder = new StringBuilder();
+                dataBuilder.AppendLine("[['Date', 'Nombre de commandes'],"); // Entêtes des colonnes
+
+                // Ajout des données dynamiques
+                var commandesParDate = _context.Commandes
+                    .GroupBy(c => c.DateComm)
+                    .Select(g => new { Date = g.Key, Total = g.Sum(c => c.Qte) })
+                    .OrderBy(d => d.Date)
+                    .ToList();
+
+                foreach (var commande in commandesParDate)
+                {
+                    dataBuilder.AppendLine($"['{commande.Date:yyyy-MM-dd}', {commande.Total}],");
+                }
+
+                // Supprime la dernière virgule et ferme le tableau
+                if (commandesParDate.Any())
+                {
+                    dataBuilder.Length -= 1; // Supprimer la dernière virgule
+                }
+                dataBuilder.AppendLine("]");
+
+                string htmlContent = $@"
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+        window.onerror = function(message, source, lineno, colno, error) {{console.error('Erreur JavaScript : ' + message + ' à ' + source + ':' + lineno + ':' + colno);
+        }};
+
+        google.charts.load('current', {{packages:['corechart']}});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {{
+            var data = google.visualization.arrayToDataTable({dataBuilder});
+
+            var options = {{
+                title: 'Commandes par jour',
+                curveType: 'function',
+                legend: {{ position: 'bottom' }}
+            }};
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+            chart.draw(data, options);
+        }}
+    </script>
+</head>
+<body>
+    <div id='curve_chart' style='width: 100%; height: 500px;'></div>
+</body>
+</html>";
+
+                string cheminFichier = System.IO.Path.Combine(cheminRepertoire, "chart.html");
+                File.WriteAllText(cheminFichier, htmlContent);
+
+                Console.WriteLine($"Fichier HTML généré à: {cheminFichier}");
             }
-
-            // Obtenir la liste des produits distincts
-            var produits = commandesParProduitEtJour.Select(c => c.Produit).Distinct().ToList();
-
-            // Créer les données pour le graphique (format attendu par Google Charts)
-            StringBuilder dataBuilder = new StringBuilder();
-            dataBuilder.AppendLine("[['Date', " + string.Join(", ", produits.Select(p => $"'{p}'")) + "]]");
-
-            // Obtenir la liste des dates distinctes
-            var dates = commandesParProduitEtJour.Select(c => c.Date).Distinct().OrderBy(d => d).ToList();
-
-            foreach (var date in dates)
+            catch (Exception ex)
             {
-                var quantitesParProduit = produits.Select(p => commandesParProduitEtJour
-                    .Where(c => c.Produit == p && c.Date == date)
-                    .Select(c => c.TotalQuantite)
-                    .FirstOrDefault()).ToList();
-
-                string dateStr = date.ToString("yyyy-MM-dd"); // Format de date (année-mois-jour)
-                dataBuilder.AppendLine($"['{dateStr}', {string.Join(", ", quantitesParProduit)}]");
+                Console.WriteLine($"Erreur : {ex.Message}");
+                throw;
             }
-
-            // HTML du graphique
-            string htmlContent = $@"
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
-                <script type='text/javascript'>
-                    google.charts.load('current', {{packages:['corechart']}});
-                    google.charts.setOnLoadCallback(drawChart);
-
-                    function drawChart() {{
-                        var data = google.visualization.arrayToDataTable([
-                            {dataBuilder.ToString()}
-                        ]);
-
-                        console.log(data); // Log pour vérifier les données
-
-                        var options = {{
-                            title: 'Quantités commandées par produit et par jour',
-                            curveType: 'function',
-                            legend: {{ position: 'bottom' }},
-                            hAxis: {{ title: 'Date' }},
-                            vAxis: {{ title: 'Quantité totale' }}
-                        }};
-
-                        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-                        chart.draw(data, options);
-                    }}
-                </script>
-            </head>
-            <body>
-                <div id='curve_chart' style='width: 100%; height: 500px;'></div>
-            </body>
-            </html>";
-
-            // Sauvegarder le fichier HTML généré
-            string cheminFichier = Path.Combine(Directory.GetCurrentDirectory(), "ressources", "chart.html");
-            File.WriteAllText(cheminFichier, htmlContent);
-
-            // Vérifiez que le fichier HTML est bien généré
-            Console.WriteLine($"Fichier HTML généré à: {cheminFichier}");
         }
     }
 }

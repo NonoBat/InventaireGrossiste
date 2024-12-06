@@ -22,6 +22,7 @@ namespace InventaireGrossiste.EditCommandes
     public partial class ModifManuCommandes : Window
     {
         private readonly ApplicationDbContext _context;
+        private readonly int _ancienneQuantite;
         public Commande CommandeModifiee { get; private set; }
 
         public ModifManuCommandes(Commande commande, ApplicationDbContext context)
@@ -29,13 +30,45 @@ namespace InventaireGrossiste.EditCommandes
             InitializeComponent();
             _context = context;
             CommandeModifiee = commande;
+            _ancienneQuantite = commande.Qte;
             DataContext = CommandeModifiee;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
-            Close();
+            var produit = _context.Products.Find(CommandeModifiee.id_product);
+            if (produit != null)
+            {
+                int difference = CommandeModifiee.Qte - _ancienneQuantite;
+
+                if (difference > 0)
+                {
+                    // Si la nouvelle quantité est supérieure à l'ancienne, soustraire la différence du stock
+                    if (produit.Qte >= difference)
+                    {
+                        produit.Qte -= difference;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stock insuffisant pour cette modification.");
+                        return;
+                    }
+                }
+                else if (difference < 0)
+                {
+                    // Si la nouvelle quantité est inférieure à l'ancienne, ajouter la différence au stock
+                    produit.Qte += Math.Abs(difference);
+                }
+
+                // Enregistrer les modifications dans le contexte de la base de données
+                _context.SaveChanges();
+                DialogResult = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Produit introuvable.");
+            }
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

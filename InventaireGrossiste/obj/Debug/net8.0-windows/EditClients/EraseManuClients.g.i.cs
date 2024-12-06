@@ -52,7 +52,7 @@ namespace InventaireGrossiste.EditClients {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;component/editclients/erasemanuclients.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;V1.0.0.0;component/editclients/erasemanuclients.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\EditClients\EraseManuClients.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

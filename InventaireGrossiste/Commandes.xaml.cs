@@ -169,7 +169,7 @@ namespace InventaireGrossiste
                 };
 
                 // Afficher une fenêtre de confirmation pour la suppression de la commande
-                var dialog = new EraseManuCommandes(commande);
+                var dialog = new EraseManuCommandes(commande, _context);
                 if (dialog.ShowDialog() == true && dialog.IsConfirmed)
                 {
                     // Supprimer la commande de la base de données

@@ -51,7 +51,6 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Height="468" Width="744">
                 <!-- Button Style Example -->
                 <Frame Name="MainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,40,0,0"/>
-                <wv2:WebView2 x:Name="ChartWebView" Height="399" />
                 <!-- WebView2 pour afficher le graphique -->
             </StackPanel>
         </Border>

@@ -26,6 +26,22 @@ namespace InventaireGrossiste.EditCommandes
 
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
+            // Récupérer le produit sélectionné
+            var selectedProduct = (Product)ProductComboBox.SelectedItem;
+            int commandeQte = int.Parse(qteTextBox.Text);
+
+            // Vérifier si la quantité de la commande est supérieure à la quantité disponible
+            if (commandeQte > selectedProduct.Qte)
+            {
+                int qteManquante = commandeQte - selectedProduct.Qte;
+                MessageBox.Show($"Manquant ; il vous manque {qteManquante} {selectedProduct.Nom}", "Erreur de quantité", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Mettre à jour la quantité du produit
+            selectedProduct.Qte -= commandeQte;
+
+
             // Créer une nouvelle commande avec les informations saisies
             NouvelleCommande = new Commande
             {
