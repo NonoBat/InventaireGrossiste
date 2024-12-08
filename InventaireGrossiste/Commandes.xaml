@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Commandes">
 
-    <Grid Height="158" Margin="64,146,0,146">
+    <Grid Margin="64,146,0,47">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -18,14 +18,14 @@
         </Grid.ColumnDefinitions>
 
         <!-- ListView to display clients -->
-        <ListView x:Name="CommandesListView" Margin="10,10,127,10">
+        <ListView x:Name="CommandesListView" Margin="10,10,46,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="N°client" DisplayMemberBinding="{Binding Client.Nom}" Width="50"/>
+                    <GridViewColumn Header="N°client" DisplayMemberBinding="{Binding Client.Nom}" Width="80"/>
                     <GridViewColumn Header="N°produit" DisplayMemberBinding="{Binding Product.Nom}" Width="150"/>
-                    <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding Qte}" Width="50"/>
-                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding DateComm, StringFormat={}{0:dd/MM/yyyy}}" Width="180"/>
-                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="160"/>
+                    <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding Qte}" Width="90"/>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding DateComm, StringFormat={}{0:dd/MM/yyyy}}" Width="190"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>

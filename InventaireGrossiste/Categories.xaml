@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Title="Categories">
 
-    <Grid Height="158" Margin="64,146,0,146">
+    <Grid Height="223" Margin="64,146,0,146">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>

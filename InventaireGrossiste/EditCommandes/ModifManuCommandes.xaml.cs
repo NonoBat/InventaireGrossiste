@@ -36,6 +36,12 @@ namespace InventaireGrossiste.EditCommandes
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (!AreFieldsValid())
+            {
+                MessageBox.Show("Tous les champs doivent être remplis avant de sauvegarder.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             var produit = _context.Products.Find(CommandeModifiee.id_product);
             if (produit != null)
             {
@@ -70,6 +76,20 @@ namespace InventaireGrossiste.EditCommandes
                 MessageBox.Show("Produit introuvable.");
             }
         }
+
+        private bool AreFieldsValid()
+        {
+            // Vérifiez ici que tous les champs nécessaires sont remplis
+            // Par exemple, vérifiez que la quantité de la commande est supérieure à zéro
+            if (CommandeModifiee.Qte <= 0)
+            {
+                return false;
+            }
+
+            // Ajoutez d'autres vérifications si nécessaire
+            return true;
+        }
+
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {

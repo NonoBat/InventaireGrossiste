@@ -10,11 +10,11 @@
             <TextBlock Text="Quantité" Margin="0,0,0,5"/>
             <TextBox Text="{Binding qte}" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Prix" Margin="0,0,0,5"/>
+            <TextBlock Text="Prix (en ,)" Margin="0,0,0,5"/>
             <TextBox Text="{Binding prix}" Margin="0,0,0,10"/>
 
-            <TextBlock Text="DLC" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding datePerime}" Margin="0,0,0,10"/>
+            <Label Content="DLC" Grid.Row="3" Grid.Column="0" />
+            <DatePicker x:Name="DLCDatePicker" Grid.Row="3" Grid.Column="1" SelectedDate="{Binding DatePerime}" />
 
             <TextBlock Text="Categorie" Margin="0,0,0,5"/>
              <ComboBox x:Name="CategorieComboBox" DisplayMemberPath="Nom" SelectedValuePath="Id" SelectedValue="{Binding categorie}" Margin="10" />

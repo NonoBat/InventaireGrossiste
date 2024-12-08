@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -15,11 +16,13 @@ namespace InventaireGrossiste
     public partial class Produits : Page
     {
         private readonly ApplicationDbContext _context;
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public Produits(ApplicationDbContext context)
         {
             InitializeComponent();
             _context = context;
+            Logger.Info("Initialisation de la classe Produits.");
             LoadProduits();
         }
 
@@ -44,11 +47,11 @@ namespace InventaireGrossiste
                     DatePerime = p.DatePerime,
                     categorie = p.categorie,
                     Emplacement = p.Emplacement,
-                        Category = new Category
-                        {
-                            Id = p.Category.Id,
-                            Nom = p.Category.Nom
-                        }
+                    Category = new Category
+                    {
+                        Id = p.Category.Id,
+                        Nom = p.Category.Nom
+                    }
                 })
                 .ToList();
         }
@@ -72,9 +75,19 @@ namespace InventaireGrossiste
 
         private void AjouterProduit(Product produit)
         {
-            // Ajouter le produit à la base de données
-            _context.Products.Add(produit);
-            _context.SaveChanges();
+            try
+            {
+                // Ajouter le produit à la base de données
+                _context.Products.Add(produit);
+                _context.SaveChanges();
+                Logger.Info("Ajout | Utilisateur: {0} | Entité: Produit {1} | Produit ajouté avec succès.",
+                    "UtilisateurActuel", produit.Id);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Produit {1} | Erreur lors de l'ajout du produit.",
+                    "UtilisateurActuel", produit.Id);
+            }
         }
 
         private void ModifierProduit_Click(object sender, RoutedEventArgs e)
@@ -108,20 +121,29 @@ namespace InventaireGrossiste
             }
         }
 
-
         private void ModifierProduit(Product produit)
         {
-            // Mettre à jour le produit dans la base de données
-            var produitExistant = _context.Products.Find(produit.Id);
-            if (produitExistant != null)
+            try
             {
-                produitExistant.Nom = produit.Nom;
-                produitExistant.Qte = produit.Qte;
-                produitExistant.Prix = produit.Prix;
-                produitExistant.DatePerime = produit.DatePerime;
-                produitExistant.categorie = produit.categorie;
-                produitExistant.Emplacement = produit.Emplacement;
-                _context.SaveChanges();
+                // Mettre à jour le produit dans la base de données
+                var produitExistant = _context.Products.Find(produit.Id);
+                if (produitExistant != null)
+                {
+                    produitExistant.Nom = produit.Nom;
+                    produitExistant.Qte = produit.Qte;
+                    produitExistant.Prix = produit.Prix;
+                    produitExistant.DatePerime = produit.DatePerime;
+                    produitExistant.categorie = produit.categorie;
+                    produitExistant.Emplacement = produit.Emplacement;
+                    _context.SaveChanges();
+                    Logger.Info("Modification | Utilisateur: {0} | Entité: Produit {1} | Produit modifié avec succès.",
+                        "UtilisateurActuel", produit.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Produit {1} | Erreur lors de la modification du produit.",
+                    "UtilisateurActuel", produit.Id);
             }
         }
 
@@ -155,12 +177,22 @@ namespace InventaireGrossiste
 
         private void SupprimerProduit(Product produit)
         {
-            // Supprimer le produit de la base de données
-            var produitExistant = _context.Products.Find(produit.Id);
-            if (produitExistant != null)
+            try
             {
-                _context.Products.Remove(produitExistant);
-                _context.SaveChanges();
+                // Supprimer le produit de la base de données
+                var produitExistant = _context.Products.Find(produit.Id);
+                if (produitExistant != null)
+                {
+                    _context.Products.Remove(produitExistant);
+                    _context.SaveChanges();
+                    Logger.Info("Suppression | Utilisateur: {0} | Entité: Produit {1} | Produit supprimé avec succès.",
+                        "UtilisateurActuel", produit.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Produit {1} | Erreur lors de la suppression du produit.",
+                    "UtilisateurActuel", produit.Id);
             }
         }
     }

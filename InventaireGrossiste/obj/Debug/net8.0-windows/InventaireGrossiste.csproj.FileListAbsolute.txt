@@ -212,3 +212,7 @@ C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\ne
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\ressources\chart.html
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\graphique.g.cs
 C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\obj\Debug\net8.0-windows\graphique.baml
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\NLog.dll
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\NLog.Web.dll
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\FontAwesome.WPF.dll
+C:\Users\nolan\source\repos\InventaireGrossiste\InventaireGrossiste\bin\Debug\net8.0-windows\config\NLog.config

@@ -8,7 +8,7 @@
             <TextBox Text="{Binding Qte}" Margin="0,0,0,10"/>
 
             <TextBlock x:Name="DateCommTextBox" Text="Date commande" Margin="0,0,0,5"/>
-            <TextBox Text="{Binding DateComm}" Margin="0,0,0,10"/>
+            <DatePicker SelectedDate="{Binding DateComm}" Margin="0,0,0,10"/>
 
             <TextBlock x:Name="StatusTextBox" Text="Status" Margin="0,0,0,5"/>
             <TextBox Text="{Binding Status}" Margin="0,0,0,10"/>

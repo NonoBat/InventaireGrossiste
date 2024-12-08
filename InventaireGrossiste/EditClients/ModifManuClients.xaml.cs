@@ -31,10 +31,30 @@ namespace InventaireGrossiste.EditClients
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (!AreFieldsValid())
+            {
+                MessageBox.Show("Tous les champs doivent être remplis avant de sauvegarder les modifications.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Valider les modifications et fermer la fenêtre de dialogue
             DialogResult = true;
             Close();
         }
+
+        private bool AreFieldsValid()
+        {
+            // Vérifiez ici que tous les champs nécessaires sont remplis
+            if (string.IsNullOrWhiteSpace(ClientModifie.Nom) || string.IsNullOrWhiteSpace(ClientModifie.Adresse) || string.IsNullOrWhiteSpace(ClientModifie.Siret))
+            {
+                return false;
+            }
+
+            // Ajoutez d'autres vérifications si nécessaire
+            return true;
+        }
+
+
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {

@@ -1,19 +1,10 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using InventaireGrossiste.EditCategories;
-using InventaireGrossiste.EditClients;
 using InventaireGrossiste.Models;
 
 namespace InventaireGrossiste
@@ -24,11 +15,13 @@ namespace InventaireGrossiste
     public partial class Categories : Page
     {
         private readonly ApplicationDbContext _context;
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public Categories()
         {
             InitializeComponent();
             _context = new ApplicationDbContext();
+            Logger.Info("Initialisation de la classe Categories.");
             LoadCategories();
         }
 
@@ -36,7 +29,6 @@ namespace InventaireGrossiste
         {
             // Récupérer les catégories de la base de données
             List<Category> categories = GetCategoriesFromDatabase();
-
             CategoriesListView.ItemsSource = categories;
         }
 
@@ -69,9 +61,19 @@ namespace InventaireGrossiste
 
         private void AjouterCategorie(Category category)
         {
-            // Ajouter la catégorie à la base de données
-            _context.Categories.Add(category);
-            _context.SaveChanges();
+            try
+            {
+                // Ajouter la catégorie à la base de données
+                _context.Categories.Add(category);
+                _context.SaveChanges();
+                Logger.Info("Ajout | Utilisateur: {0} | Entité: Catégorie {1} | Catégorie ajoutée avec succès.",
+                    "UtilisateurActuel", category.Id);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Catégorie {1} | Erreur lors de l'ajout de la catégorie.",
+                    "UtilisateurActuel", category.Id);
+            }
         }
 
         private void ModifierCategorie_Click(object sender, RoutedEventArgs e)
@@ -101,12 +103,22 @@ namespace InventaireGrossiste
 
         private void ModifierCategorie(Category category)
         {
-            // Mettre à jour la catégorie dans la base de données
-            var categorieExistante = _context.Categories.Find(category.Id);
-            if (categorieExistante != null)
+            try
             {
-                categorieExistante.Nom = category.Nom;
-                _context.SaveChanges();
+                // Mettre à jour la catégorie dans la base de données
+                var categorieExistante = _context.Categories.Find(category.Id);
+                if (categorieExistante != null)
+                {
+                    categorieExistante.Nom = category.Nom;
+                    _context.SaveChanges();
+                    Logger.Info("Modification | Utilisateur: {0} | Entité: Catégorie {1} | Catégorie modifiée avec succès.",
+                        "UtilisateurActuel", category.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Catégorie {1} | Erreur lors de la modification de la catégorie.",
+                    "UtilisateurActuel", category.Id);
             }
         }
 
@@ -134,12 +146,22 @@ namespace InventaireGrossiste
 
         private void SupprimerCategorie(Category category)
         {
-            // Supprimer la catégorie de la base de données
-            var categorieExistante = _context.Categories.Find(category.Id);
-            if (categorieExistante != null)
+            try
             {
-                _context.Categories.Remove(categorieExistante);
-                _context.SaveChanges();
+                // Supprimer la catégorie de la base de données
+                var categorieExistante = _context.Categories.Find(category.Id);
+                if (categorieExistante != null)
+                {
+                    _context.Categories.Remove(categorieExistante);
+                    _context.SaveChanges();
+                    Logger.Info("Suppression | Utilisateur: {0} | Entité: Catégorie {1} | Catégorie supprimée avec succès.",
+                        "UtilisateurActuel", category.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Catégorie {1} | Erreur lors de la suppression de la catégorie.",
+                    "UtilisateurActuel", category.Id);
             }
         }
     }

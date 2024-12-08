@@ -1,0 +1,18 @@
+2024-12-08 23:37:29.7668 | INFO |  |  |  | Application démarrée. | 
+2024-12-08 23:37:39.8650 | INFO |  |  |  | Test de log NLog - initialisation de la classe Commandes. | 
+2024-12-08 23:37:49.5810 | INFO |  |  |  | Modification | Utilisateur: UtilisateurActuel | Entité: Commande 2-1 | Commande modifiée avec succès. | 
+2024-12-08 23:40:40.1655 | INFO |  |  |  | Application démarrée. | 
+2024-12-08 23:40:48.5071 | INFO |  |  |  | Initialisation de la classe Clients. | 
+2024-12-08 23:41:17.2575 | INFO |  |  |  | Ajout | Utilisateur: UtilisateurActuel | Entité: Client 5 | Client ajouté avec succès. | 
+2024-12-08 23:42:51.9317 | INFO |  |  |  | Application démarrée. | 
+2024-12-08 23:43:02.2058 | INFO |  |  |  | Initialisation de la classe Clients. | 
+2024-12-08 23:43:04.2997 | INFO |  |  |  | Initialisation de la classe Produits. | 
+2024-12-08 23:43:15.9448 | INFO |  |  |  | Modification | Utilisateur: UtilisateurActuel | Entité: Produit 6 | Produit modifié avec succès. | 
+2024-12-08 23:43:17.3773 | INFO |  |  |  | Initialisation de la classe Categories. | 
+2024-12-08 23:43:23.9617 | INFO |  |  |  | Modification | Utilisateur: UtilisateurActuel | Entité: Catégorie 4 | Catégorie modifiée avec succès. | 
+2024-12-08 23:43:52.0360 | INFO |  |  |  | Application démarrée. | 
+2024-12-08 23:44:00.2757 | INFO |  |  |  | Initialisation de la classe Produits. | 
+2024-12-08 23:44:34.9270 | INFO |  |  |  | Ajout | Utilisateur: UtilisateurActuel | Entité: Produit 7 | Produit ajouté avec succès. | 
+2024-12-08 23:45:27.7829 | INFO |  |  |  | Application démarrée. | 
+2024-12-08 23:45:35.6170 | INFO |  |  |  | Test de log NLog - initialisation de la classe Commandes. | 
+2024-12-08 23:45:36.5709 | INFO |  |  |  | Initialisation de la classe Produits. | 

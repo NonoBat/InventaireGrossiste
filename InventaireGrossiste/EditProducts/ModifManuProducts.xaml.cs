@@ -41,9 +41,28 @@ namespace InventaireGrossiste.EditProducts
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (!AreFieldsValid())
+            {
+                MessageBox.Show("Tous les champs doivent être remplis avant de sauvegarder les modifications.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Valider les modifications et fermer la fenêtre de dialogue
+            ProduitModifie.DatePerime = DLCDatePicker.SelectedDate ?? ProduitModifie.DatePerime;
             DialogResult = true;
             Close();
+        }
+
+        private bool AreFieldsValid()
+        {
+            // Vérifiez ici que tous les champs nécessaires sont remplis
+            if (string.IsNullOrWhiteSpace(ProduitModifie.Nom) || string.IsNullOrWhiteSpace(ProduitModifie.Emplacement) || ProduitModifie.Prix <= 0 || ProduitModifie.Qte < 0 || CategorieComboBox.SelectedItem == null)
+            {
+                return false;
+            }
+
+            // Ajoutez d'autres vérifications si nécessaire
+            return true;
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

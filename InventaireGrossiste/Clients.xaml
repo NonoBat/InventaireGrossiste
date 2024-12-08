@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Title="Clients">
 
-    <Grid Height="158" Width="671">
+    <Grid Height="242" Width="671">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>

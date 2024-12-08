@@ -26,6 +26,12 @@ namespace InventaireGrossiste.EditCommandes
 
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!AreFieldsValid())
+            {
+                MessageBox.Show("Tous les champs doivent être remplis avant d'ajouter la commande.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Récupérer le produit sélectionné
             var selectedProduct = (Product)ProductComboBox.SelectedItem;
             int commandeQte = int.Parse(qteTextBox.Text);
@@ -41,14 +47,13 @@ namespace InventaireGrossiste.EditCommandes
             // Mettre à jour la quantité du produit
             selectedProduct.Qte -= commandeQte;
 
-
             // Créer une nouvelle commande avec les informations saisies
             NouvelleCommande = new Commande
             {
                 id_client = (int)ClientComboBox.SelectedValue,
                 id_product = (int)ProductComboBox.SelectedValue,
                 Qte = int.Parse(qteTextBox.Text),
-                DateComm = DateTime.Parse(DateCommTextBox.Text),
+                DateComm = DateCommDatePicker.SelectedDate ?? DateTime.Now,
                 Status = StatusTextBox.Text,
                 Client = (Client)ClientComboBox.SelectedItem,
                 Product = (Product)ProductComboBox.SelectedItem
@@ -58,5 +63,24 @@ namespace InventaireGrossiste.EditCommandes
             DialogResult = true;
             Close();
         }
+
+        private bool AreFieldsValid()
+        {
+            // Vérifiez ici que tous les champs nécessaires sont remplis
+            if (ClientComboBox.SelectedItem == null || ProductComboBox.SelectedItem == null || string.IsNullOrWhiteSpace(qteTextBox.Text) || string.IsNullOrWhiteSpace(StatusTextBox.Text))
+            {
+                return false;
+            }
+
+            // Vérifiez que la quantité est un nombre valide et supérieur à zéro
+            if (!int.TryParse(qteTextBox.Text, out int qte) || qte <= 0)
+            {
+                return false;
+            }
+
+            // Ajoutez d'autres vérifications si nécessaire
+            return true;
+        }
+
     }
 }

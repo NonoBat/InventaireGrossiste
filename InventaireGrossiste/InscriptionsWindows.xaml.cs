@@ -23,6 +23,7 @@ namespace InventaireGrossiste
         public InscriptionsWindows(ApplicationDbContext _context)
         {
             ApplicationDbContext context = _context;
+
             InitializeComponent();
         }
 
@@ -54,10 +55,20 @@ namespace InventaireGrossiste
                 MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-        private void retour_Click(object sender, RoutedEventArgs e)
+        private void SeConnecter_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new MainWindow();
+            // Créer une nouvelle instance de MainWindow
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+            // Fermer la fenêtre actuelle
+            Window currentWindow = Window.GetWindow(this);
+            if (currentWindow != null)
+            {
+                currentWindow.Close();
+            }
         }
+
     }
 }
 

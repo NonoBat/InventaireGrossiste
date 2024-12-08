@@ -70,7 +70,7 @@ namespace InventaireGrossiste {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;V1.0.0.0;component/graphique.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;component/graphique.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\graphique.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

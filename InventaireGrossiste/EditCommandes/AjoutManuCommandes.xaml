@@ -13,8 +13,8 @@
             <TextBlock Text="Quantité" Margin="0,10,0,0" />
             <TextBox x:Name="qteTextBox" />
 
-            <TextBlock Text="Date de Commande" Margin="0,10,0,0" />
-            <TextBox x:Name="DateCommTextBox" />
+            <TextBlock Text="Date commande" Margin="0,0,0,5"/>
+            <DatePicker x:Name="DateCommDatePicker" Margin="0,0,0,10"/>
 
             <TextBlock Text="Statut" Margin="0,10,0,0" />
             <TextBox x:Name="StatusTextBox" />

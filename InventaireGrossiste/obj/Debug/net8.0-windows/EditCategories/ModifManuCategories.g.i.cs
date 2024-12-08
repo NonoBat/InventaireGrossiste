@@ -52,7 +52,7 @@ namespace InventaireGrossiste.EditCategories {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;V1.0.0.0;component/editcategories/modifmanucategories.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/InventaireGrossiste;component/editcategories/modifmanucategories.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\EditCategories\ModifManuCategories.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

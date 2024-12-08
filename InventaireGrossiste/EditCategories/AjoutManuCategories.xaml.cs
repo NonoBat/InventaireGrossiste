@@ -33,6 +33,12 @@ namespace InventaireGrossiste.EditCategories
 
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!AreFieldsValid())
+            {
+                MessageBox.Show("Tous les champs doivent être remplis avant d'ajouter la catégorie.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Créer une nouvelle catégorie avec les informations saisies
             NouvelleCategory.Nom = NomTextBox.Text;
 
@@ -40,5 +46,18 @@ namespace InventaireGrossiste.EditCategories
             DialogResult = true;
             Close();
         }
+
+        private bool AreFieldsValid()
+        {
+            // Vérifiez ici que tous les champs nécessaires sont remplis
+            if (string.IsNullOrWhiteSpace(NomTextBox.Text))
+            {
+                return false;
+            }
+
+            // Ajoutez d'autres vérifications si nécessaire
+            return true;
+        }
+
     }
 }

@@ -13,11 +13,13 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable([['Date', 'Nombre de commandes'],
 ['2024-12-05', 1],
-['2024-12-06', 10],]
+['2024-12-06', 10],
+['2024-12-08', 1],
+['2024-12-13', 1],]
 );
 
             var options = {
-                title: 'Commandes par jour',
+                title: 'Nombre de produits commandés par jour',
                 curveType: 'function',
                 legend: { position: 'bottom' }
             };

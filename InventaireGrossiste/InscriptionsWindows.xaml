@@ -17,7 +17,6 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Margin="0,15">
-            <Button Content="click" Click="retour_Click"/>
             <Label Content="OptiFlux" FontWeight="Bold" Foreground="White" FontSize="20" HorizontalContentAlignment="Center"/>
 
             <Image HorizontalAlignment="Center" Height="110" Margin="0,83,0,0" Width="116"
@@ -42,7 +41,11 @@
 
             <!-- Valider Button avec coins arrondis -->
             <Button Content="S'inscrire" Click="Inscrire_Click" Height="40" Width="300" FontSize="16" Background="#212E53" Foreground="White" BorderThickness="0" Margin="0,20,0,0"/>
-            
+
+            <!-- Se connecter Hyperlink -->
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Hyperlink Click="SeConnecter_Click">Se connecter</Hyperlink>
+            </TextBlock>
 
         </StackPanel>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>

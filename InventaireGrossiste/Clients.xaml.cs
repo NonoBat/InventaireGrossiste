@@ -1,18 +1,10 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using InventaireGrossiste.Models;
 using Microsoft.EntityFrameworkCore;
 using InventaireGrossiste.EditClients;
@@ -25,11 +17,13 @@ namespace InventaireGrossiste
     public partial class Clients : Page
     {
         private readonly ApplicationDbContext _context;
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public Clients()
         {
             InitializeComponent();
             _context = new ApplicationDbContext();
+            Logger.Info("Initialisation de la classe Clients.");
             LoadClients();
         }
 
@@ -37,7 +31,6 @@ namespace InventaireGrossiste
         {
             // Récupérer les clients de la base de données
             List<Client> clients = GetClientsFromDatabase();
-
             ClientsListView.ItemsSource = clients;
         }
 
@@ -72,9 +65,19 @@ namespace InventaireGrossiste
 
         private void AjouterClient(Client client)
         {
-            // Ajouter le client à la base de données
-            _context.Clients.Add(client);
-            _context.SaveChanges();
+            try
+            {
+                // Ajouter le client à la base de données
+                _context.Clients.Add(client);
+                _context.SaveChanges();
+                Logger.Info("Ajout | Utilisateur: {0} | Entité: Client {1} | Client ajouté avec succès.",
+                    "UtilisateurActuel", client.Id);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Client {1} | Erreur lors de l'ajout du client.",
+                    "UtilisateurActuel", client.Id);
+            }
         }
 
         private void ModifierClient_Click(object sender, RoutedEventArgs e)
@@ -101,16 +104,27 @@ namespace InventaireGrossiste
                 MessageBox.Show("Veuillez sélectionner un client à modifier.");
             }
         }
+
         private void ModifierClient(Client client)
         {
-            // Mettre à jour le client dans la base de données
-            var clientExistant = _context.Clients.Find(client.Id);
-            if (clientExistant != null)
+            try
             {
-                clientExistant.Nom = client.Nom;
-                clientExistant.Adresse = client.Adresse;
-                clientExistant.Siret = client.Siret;
-                _context.SaveChanges();
+                // Mettre à jour le client dans la base de données
+                var clientExistant = _context.Clients.Find(client.Id);
+                if (clientExistant != null)
+                {
+                    clientExistant.Nom = client.Nom;
+                    clientExistant.Adresse = client.Adresse;
+                    clientExistant.Siret = client.Siret;
+                    _context.SaveChanges();
+                    Logger.Info("Modification | Utilisateur: {0} | Entité: Client {1} | Client modifié avec succès.",
+                        "UtilisateurActuel", client.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Client {1} | Erreur lors de la modification du client.",
+                    "UtilisateurActuel", client.Id);
             }
         }
 
@@ -138,14 +152,23 @@ namespace InventaireGrossiste
 
         private void SupprimerClient(Client client)
         {
-            // Supprimer le client de la base de données
-            var clientExistant = _context.Clients.Find(client.Id);
-            if (clientExistant != null)
+            try
             {
-                _context.Clients.Remove(clientExistant);
-                _context.SaveChanges();
+                // Supprimer le client de la base de données
+                var clientExistant = _context.Clients.Find(client.Id);
+                if (clientExistant != null)
+                {
+                    _context.Clients.Remove(clientExistant);
+                    _context.SaveChanges();
+                    Logger.Info("Suppression | Utilisateur: {0} | Entité: Client {1} | Client supprimé avec succès.",
+                        "UtilisateurActuel", client.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Erreur | Utilisateur: {0} | Entité: Client {1} | Erreur lors de la suppression du client.",
+                    "UtilisateurActuel", client.Id);
             }
         }
     }
-
 }

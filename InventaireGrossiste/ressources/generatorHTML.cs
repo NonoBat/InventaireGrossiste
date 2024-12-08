@@ -80,7 +80,7 @@ namespace InventaireGrossiste.ressources
             var data = google.visualization.arrayToDataTable({dataBuilder});
 
             var options = {{
-                title: 'Commandes par jour',
+                title: 'Nombre de produits commandés par jour',
                 curveType: 'function',
                 legend: {{ position: 'bottom' }}
             }};
